@@ -5,10 +5,12 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=todo-list-db-dev
+      - MYSQL_DATABASE=todo_list_db
+    command: --init-file /data/init.sql
     ports:
       - "3306:3306"
     volumes:
       - db_mysql:/var/lib/mysql
+      - ./src/db/init.sql:/data/init.sql
 volumes:
   db_mysql:

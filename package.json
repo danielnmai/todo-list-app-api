@@ -6,6 +6,8 @@
   "scripts": {
     "test": "yarn test",
     "db:migrate": "yarn prisma migrate dev",
+    "db:reset": "yarn prisma migrate reset",
+    "db:seed": "yarn prisma db seed",
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts"
@@ -32,6 +34,7 @@
     "http-status": "^2.1.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.1",
     "prisma": "6.3.1",
