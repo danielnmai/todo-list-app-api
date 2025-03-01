@@ -15,10 +15,11 @@ This will launch the MySQL service and create a database named `todo_list_db`
 docker-compose up
 ```
 
-Create an `.env` file at the root directory with the database URL
+Create an `.env` file at the root directory
 
 ```bash
 DATABASE_URL=mysql://root:root@127.0.0.1/todo_list_db
+PORT=8080
 ```
 
 Next, migrate the database with Prisma schema
