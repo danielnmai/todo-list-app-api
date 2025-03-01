@@ -8,13 +8,18 @@ Install the app dependencies
 yarn
 ```
 
-Make sure you have Docker installed, run the MySQL image with docker-compose
+Make sure you have Docker installed, run the MySQL image with docker-compose.
+This will launch the MySQL service and create a database named `todo_list_db`
 
 ```bash
 docker-compose up
 ```
 
-This will launch MySQL service and create a database named `todo_list_db`
+Create an `.env` file at the root directory with the database URL
+
+```bash
+DATABASE_URL=mysql://root:root@127.0.0.1/todo_list_db
+```
 
 Next, migrate the database with Prisma schema
 
