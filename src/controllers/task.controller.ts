@@ -50,8 +50,11 @@ const getAllTasks = async (req: Request, res: Response): Promise<any> => {
 
 const createTask = async (req: Request, res: Response): Promise<any> => {
   const { title, color, completed }: Task = req.body;
-  if (!title || !color || !completed) {
-    res.status(status.BAD_REQUEST).send({ error: "missing task arguments" });
+
+  if (!title || !color || !req.body.hasOwnProperty("completed")) {
+    return res
+      .status(status.BAD_REQUEST)
+      .send({ error: "missing task arguments" });
   }
 
   try {
