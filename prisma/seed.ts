@@ -7,7 +7,7 @@ const main = async () => {
     where: { id: 1 },
     update: {},
     create: {
-      title: "Teset Task 1",
+      title: "Test Task 1",
       color: "Blue",
       completed: false,
     },
